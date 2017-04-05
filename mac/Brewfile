@@ -9,6 +9,7 @@ brew 'maven'
 # Casks
 cask 'chefdk'
 cask 'dropbox'
+cask 'magicprefs' #Magic mouse fix
 cask 'vagrant'
 
 # App Store Apps
