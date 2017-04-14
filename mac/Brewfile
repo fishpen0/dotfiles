@@ -10,6 +10,7 @@ brew 'maven'
 cask 'chefdk'
 cask 'dropbox'
 cask 'magicprefs' #Magic mouse fix
+cask 'meld'
 cask 'vagrant'
 
 # App Store Apps
