@@ -1,6 +1,8 @@
 [user]
     name = Logan Stuart
     email = logan@cloudhealthtech.com
+[core]
+    excludesfile = ~/.gitignore
 [credential]
     helper = cache
     username = fishpen0
