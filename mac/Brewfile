@@ -9,6 +9,7 @@ brew 'maven'
 # Casks
 cask 'chefdk'
 cask 'dropbox'
+cask 'gimp'
 cask 'magicprefs' #Magic mouse fix
 cask 'meld'
 cask 'vagrant'
