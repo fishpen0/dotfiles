@@ -4,7 +4,7 @@ brew 'docker'
 brew 'git'
 brew 'imagemagick'
 brew 'mas'
-brew 'maven'i
+brew 'maven'
 brew 'node'
 brew 'ruby'
 brew 'screen'
