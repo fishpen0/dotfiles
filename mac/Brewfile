@@ -4,15 +4,26 @@ brew 'docker'
 brew 'git'
 brew 'imagemagick'
 brew 'mas'
-brew 'maven'
+brew 'maven'i
+brew 'node'
+brew 'ruby'
+brew 'screen'
+brew 'sqlite'
+brew 'wget'
 
 # Casks
-cask 'chefdk'
+cask 'chefdk'i
+cask 'deathtodsstore'
 cask 'dropbox'
+cask 'firefox'
 cask 'gimp'
+cask 'google-chrome'
+cask 'jetbrains-toolbox'
 cask 'magicprefs' #Magic mouse fix
 cask 'meld'
+cask 'pgadmin4'
 cask 'vagrant'
+cask 'vlc'
 
 # App Store Apps
 mas 'HyperDock', id: 449830122
