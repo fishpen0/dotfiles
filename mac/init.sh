@@ -9,3 +9,5 @@ brew install mas
 # Install brewfile
 brew bundle 
 
+# Don't write DS_Store files to nfs volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
