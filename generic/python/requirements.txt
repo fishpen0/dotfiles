@@ -1,4 +1,2 @@
 awscli
-botocore
-boto3
 virtualenv
