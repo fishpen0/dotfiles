@@ -2,7 +2,7 @@
     insteadOf = https://github.com/
 [user]
     name = Logan Stuart
-    email = logan@cloudhealthtech.com
+    email = fishpen0@users.noreply.github.com
 [core]
     excludesfile = ~/.gitignore
 [credential]
