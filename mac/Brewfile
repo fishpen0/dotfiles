@@ -12,7 +12,7 @@ brew 'sqlite'
 brew 'wget'
 
 # Casks
-cask 'chefdk'i
+cask 'chefdk'
 cask 'deathtodsstore'
 cask 'dropbox'
 cask 'firefox'
@@ -22,7 +22,11 @@ cask 'jetbrains-toolbox'
 cask 'magicprefs' #Magic mouse fix
 cask 'meld'
 cask 'pgadmin4'
+cask 'private-internet-access'
+cask 'slack'
+cask 'steam'
 cask 'vagrant'
+cask 'virtualbox'
 cask 'vlc'
 
 # App Store Apps
