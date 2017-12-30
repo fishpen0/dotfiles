@@ -1,3 +1,5 @@
+[url "git@github.com:"]
+    insteadOf = https://github.com/
 [user]
     name = Logan Stuart
     email = logan@cloudhealthtech.com
@@ -22,4 +24,3 @@
 [mergetool "meld"]
     trustExitCode = true
     cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
-
