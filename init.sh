@@ -2,7 +2,7 @@
 
 # Do Generic Tasks
 run_generic() {
-  ./generic/generic.sh
+  generic/init.sh
 }
 
 # Do Debian Tasks
