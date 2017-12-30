@@ -12,5 +12,8 @@ brew install mas
 # Install brewfile
 brew bundle 
 
+# Install Iterm Tab Setter
+npm install -g iterm2-tab-set
+
 # Don't write DS_Store files to nfs volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
