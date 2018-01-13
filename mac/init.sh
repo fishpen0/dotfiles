@@ -1,5 +1,7 @@
 #! /bin/sh
 
+echo "Running MacOs Tasks"
+
 # Enable xcode clt
 xcode-select --install
 
@@ -17,3 +19,6 @@ npm install -g iterm2-tab-set
 
 # Don't write DS_Store files to nfs volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
+# Change default screenshot directory
+defaults write com.apple.screencapture location ~/Documents/Screenshots
