@@ -5,8 +5,15 @@ echo "Running MacOs Tasks"
 # Enable xcode clt
 xcode-select --install
 
-# Install Homebrew
+############
+# Homebrew #
+############
+
+# Install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Disable Tracking
+brew analytics off
 
 # Setup mas
 brew install mas
