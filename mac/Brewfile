@@ -4,6 +4,7 @@ tap "caskroom/cask"
 # Brews
 brew 'awscli'
 brew 'bash'
+brew 'bash-completion'
 brew 'git'
 brew 'htop'
 brew 'imagemagick'
