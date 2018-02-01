@@ -47,4 +47,5 @@ cask 'vlc'
 
 # App Store Apps
 mas 'HyperDock', id: 449830122
+mas 'PiPifier', id: 1160374471 # Add pip button to safari
 mas 'Xcode', id: 497799835
