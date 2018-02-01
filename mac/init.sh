@@ -44,4 +44,6 @@ npm install -g iterm2-tab-set
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
 # Change default screenshot directory
+mkdir ~/Documents/Screenshots
 defaults write com.apple.screencapture location ~/Documents/Screenshots
+killall SystemUIServer
