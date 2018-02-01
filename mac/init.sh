@@ -15,11 +15,19 @@ xcode-select --install
 # Disable Tracking
 brew analytics off
 
-# Setup mas
+# Setup cask for applications
+brew tap caskroom/cask
+
+# Setup mas for app store support
 brew install mas
 
-# Install brewfile
+# Install Brewfile
 brew bundle 
+
+# Done
+brew upgrade
+brew cleanup
+brew cask cleanup
 
 # Install Iterm Tab Setter
 npm install -g iterm2-tab-set
