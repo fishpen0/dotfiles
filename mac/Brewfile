@@ -24,6 +24,7 @@ brew 'zsh-completions'
 
 # Casks
 cask 'alfred'
+cask 'atom'
 cask 'aws-vault'
 cask 'chefdk'
 cask 'deathtodsstore'
