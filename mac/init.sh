@@ -47,3 +47,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 mkdir ~/Documents/Screenshots
 defaults write com.apple.screencapture location ~/Documents/Screenshots
 killall SystemUIServer
+
+# Suppress osx motd
+touch ~/.hushlogin
