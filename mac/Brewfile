@@ -50,5 +50,7 @@ cask 'vlc'
 
 # App Store Apps
 mas 'HyperDock', id: 449830122
+mas 'LastPass', id: 926036361
+mas 'Microsoft Remote Desktop', id: 1295203466
 mas 'PiPifier', id: 1160374471 # Add pip button to safari
 mas 'Xcode', id: 497799835
