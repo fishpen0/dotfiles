@@ -46,7 +46,7 @@ cask 'private-internet-access'
 cask 'slack'
 cask 'spotify'
 cask 'steam'
-cask 'usb-overdrive'
+# cask 'usb-overdrive' # Maybe just install this one manually
 cask 'vagrant'
 cask 'virtualbox'
 cask 'vlc'
