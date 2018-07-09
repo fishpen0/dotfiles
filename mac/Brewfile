@@ -35,6 +35,7 @@ cask 'firefox'
 cask 'gimp'
 cask 'google-chrome'
 cask 'iterm2'
+cask 'java'
 cask 'jetbrains-toolbox'
 cask 'magicprefs' #Magic mouse fix
 cask 'meld'
