@@ -33,6 +33,10 @@ brew cask cleanup
 # Iterm #
 #########
 
+# Copy Iterm Configs
+cp -r .iterm2/ ~/.iterm2/
+cp .iterm2_* ~/
+
 # Install Iterm Tab Setter
 npm install -g iterm2-tab-set
 
