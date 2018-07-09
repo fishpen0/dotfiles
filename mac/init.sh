@@ -62,3 +62,9 @@ touch ~/.hushlogin
 # Fix Bash to default to bash 4
 echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
 chsh -s /usr/local/bin/bash;
+
+# Install powerline fonts
+unzip ../fonts/Inconsolata.zip -d /Library/Fonts
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
