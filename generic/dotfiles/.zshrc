@@ -60,7 +60,9 @@ ZSH_CUSTOM=$HOME/.zsh_customizations
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   colored-man-pages
+  docker
   git
+  pip
   thefuck
 )
 
