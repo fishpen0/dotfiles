@@ -97,3 +97,5 @@ source $ZSH/oh-my-zsh.sh
 #
 #
 
+# Configure better custom directory
+ZSH_CUSTOM=$HOME/.zsh_customizations
