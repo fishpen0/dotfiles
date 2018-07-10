@@ -61,6 +61,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   colored-man-pages
   git
+  thefuck
 )
 
 source $ZSH/oh-my-zsh.sh
