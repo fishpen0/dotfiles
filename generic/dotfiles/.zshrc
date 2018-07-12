@@ -9,6 +9,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Use Gnuutils commands by default
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 ###########################
 # Antigen Package Manager #
