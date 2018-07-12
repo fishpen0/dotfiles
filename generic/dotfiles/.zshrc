@@ -1,6 +1,10 @@
 #@IgnoreInspection BashAddShebang
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Use Gnuutils commands by default
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
 
 # Import antigen
 source /usr/local/share/antigen/antigen.zsh
