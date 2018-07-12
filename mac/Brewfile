@@ -46,6 +46,7 @@ cask 'jetbrains-toolbox'
 cask 'magicprefs' #Magic mouse fix
 cask 'meld'
 cask 'pgadmin4'
+cask 'postico'
 cask 'pritunl'
 cask 'private-internet-access'
 cask 'slack'
