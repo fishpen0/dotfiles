@@ -2,6 +2,7 @@
 tap "caskroom/cask"
 
 # Brews
+brew 'antigen'
 brew 'awscli'
 brew 'bash'
 brew 'bash-completion2'
