@@ -1,13 +1,38 @@
 #@IgnoreInspection BashAddShebang
+
+################
+# Path Changes #
+################
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Use Gnuutils commands by default
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
+###########################
+# Antigen Package Manager #
+###########################
 
 # Import antigen
 source /usr/local/share/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle colored-man-pages
+antigen bundle docker
+antigen bundle git
+antigen bundle pip
+antigen bundle thefuck
+
+# Tell Antigen that you're done.
+antigen apply
+
+#############
+# oh-my-zsh #
+#############
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/lstuart/.oh-my-zsh"
@@ -67,13 +92,7 @@ ZSH_CUSTOM=$HOME/.zsh_customizations
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  colored-man-pages
-  docker
-  git
-  pip
-  thefuck
-)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
