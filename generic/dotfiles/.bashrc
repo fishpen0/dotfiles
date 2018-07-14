@@ -1,6 +1,13 @@
 # Use Gnuutils commands by default
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
+###############
+# iTerm setup #
+###############
+
+# load iterm integration
+source ~/.iterm2_shell_integration.bash
+
 ###########
 # Aliases #
 ###########
