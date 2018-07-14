@@ -11,6 +11,13 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+###############
+# iTerm setup #
+###############
+
+# load iterm integration
+source ~/.iterm2_shell_integration.zsh
+
 ###########################
 # Antigen Package Manager #
 ###########################

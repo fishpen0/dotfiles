@@ -68,3 +68,9 @@ unzip ../fonts/Inconsolata.zip -d /Library/Fonts
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Download latest iterm integration files for bash
+curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
+
+# Download latest iterm integration files for zsh
+curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
