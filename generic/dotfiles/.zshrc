@@ -26,7 +26,7 @@ source ~/.iterm2_shell_integration.zsh
 source /usr/local/share/antigen/antigen.zsh
 
 # Goto .antigenrc for antigen config
-source .antigenrc
+source ~/.antigenrc
 
 #############
 # oh-my-zsh #
