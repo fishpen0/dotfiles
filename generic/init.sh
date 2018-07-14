@@ -2,4 +2,5 @@
 
 echo "Running Generic Tasks"
 echo "Copying Generic Dotfiles"
-cp -vR ./dotfiles/ ~/
+cd ./dotfiles/
+cp -vR . ~/
