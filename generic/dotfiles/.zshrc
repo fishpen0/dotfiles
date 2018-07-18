@@ -18,15 +18,7 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # load iterm integration
 source ~/.iterm2_shell_integration.zsh
 
-###########################
-# Antigen Package Manager #
-###########################
 
-# Import antigen
-source /usr/local/share/antigen/antigen.zsh
-
-# Goto .antigenrc for antigen config
-source ~/.antigenrc
 
 #############
 # oh-my-zsh #
