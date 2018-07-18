@@ -92,3 +92,13 @@ POWERLEVEL9K_SHORTEN_FOLDER_MARKER=.git
 # Segments Config
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+
+###########################
+# Antigen Package Manager #
+###########################
+
+# Import antigen
+source /usr/local/share/antigen/antigen.zsh
+
+# Goto .antigenrc for antigen config
+source ~/.antigenrc
