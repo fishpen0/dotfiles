@@ -84,13 +84,24 @@ POWERLEVEL9K_SHORTEN_STRATEGY=truncate_with_folder_marker
 POWERLEVEL9K_SHORTEN_FOLDER_MARKER=.git
 
 # Custom functions
-#zsh_terraform_workspace(){
-#    local workspace=$(terraform workspace show)
-#
-#}
+zsh_terraform() {
+  # break if there is no .terraform directory
+  if [[ -d .terraform ]]; then
+    local tf_workspace=$(terraform workspace show)
+    local color='%F{99}'
+    echo -n "\ufbdf $tf_workspace"
+  fi
+}
+
+# Terraform Segment
+POWERLEVEL9K_CUSTOM_TERRAFORM="zsh_terraform"
+POWERLEVEL9K_CUSTOM_TERRAFORM_BACKGROUND=057
+POWERLEVEL9K_CUSTOM_TERRAFORM_FOREGROUND=015
+
+
 
 # Segments Config
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv rbenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir custom_terraform virtualenv rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 
 ###########################
