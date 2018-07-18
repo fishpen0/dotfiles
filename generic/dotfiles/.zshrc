@@ -80,7 +80,8 @@ POWERLEVEL9K_ALWAYS_SHOW_CONTEXT=true
 POWERLEVEL9K_CONTEXT_TEMPLATE=%n
 
 # Dir Config
-POWERLEVEL9K_SHORTEN_STRATEGY=truncate_with_package_name
+POWERLEVEL9K_SHORTEN_STRATEGY=truncate_with_folder_marker
+POWERLEVEL9K_SHORTEN_FOLDER_MARKER=.git
 
 # Custom functions
 #zsh_terraform_workspace(){
