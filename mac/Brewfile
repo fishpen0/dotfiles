@@ -36,7 +36,8 @@ brew 'zsh-completions'
 cask 'alfred'
 cask 'atom'
 cask 'aws-vault'
-cask 'deathtodsstore'
+cask 'blue-jeans' # video conferencing
+cask 'deathtodsstore' # TODO: launch automatically in mac init
 cask 'discord'
 cask 'docker'
 cask 'dropbox'
