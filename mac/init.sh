@@ -74,3 +74,12 @@ curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration
 
 # Download latest iterm integration files for zsh
 curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
+
+######################
+# Visual-studio-code #
+######################
+
+# Install extensions
+while IFS='' read -r line || [[ -n "$extension" ]]; do
+    code --install-extension $extension
+done < "../generic/vscode/extensions"
