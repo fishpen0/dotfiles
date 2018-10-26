@@ -12,8 +12,14 @@ source ~/.iterm2_shell_integration.bash
 # Aliases #
 ###########
 
+# Listing
+alias l="ls -lah --color"
+alias ll="ls -lah --color"
 
-alias ll="ls -lah"
+# Safe aliases
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
