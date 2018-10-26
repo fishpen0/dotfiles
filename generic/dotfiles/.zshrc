@@ -11,14 +11,17 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+#######################
+# Environment Changes #
+#######################
+export AWS_DEFAULT_PROFILE="default"
+
 ###############
 # iTerm setup #
 ###############
 
 # load iterm integration
 source ~/.iterm2_shell_integration.zsh
-
-
 
 #############
 # oh-my-zsh #
@@ -84,14 +87,26 @@ POWERLEVEL9K_SHORTEN_STRATEGY=truncate_with_folder_marker
 POWERLEVEL9K_SHORTEN_FOLDER_MARKER=.git
 
 # Custom functions
+zsh_aws() {
+  if [ "$AWS_DEFAULT_PROFILE" != "default" ]; then
+    local color='%F{208}'
+    echo -n "\ue7ad ${AWS_DEFAULT_PROFILE}"
+  fi
+}
+
 zsh_terraform() {
   # break if there is no .terraform directory
   if [[ -d .terraform ]]; then
-    local tf_workspace=$(terraform workspace show)
+    local tf_workspace=$(/usr/local/bin/terraform workspace show)
     local color='%F{99}'
     echo -n "\ufbdf $tf_workspace"
   fi
 }
+
+# AWS Segment
+POWERLEVEL9K_CUSTOM_AWS="zsh_aws"
+POWERLEVEL9K_CUSTOM_AWS_BACKGROUND=202
+POWERLEVEL9K_CUSTOM_AWS_FOREGROUND=015
 
 # Terraform Segment
 POWERLEVEL9K_CUSTOM_TERRAFORM="zsh_terraform"
@@ -109,7 +124,7 @@ POWERLEVEL9K_VCS_GIT_GITLAB_ICON=''
 POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=''
 
 # Segments Config
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir custom_terraform virtualenv rbenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir custom_aws custom_terraform virtualenv rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 
 ###########################
