@@ -15,7 +15,24 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 #################
 # AWS Shortcuts #
 #################
-bucketsize() {
+
+function awsacct() {
+    awsacct_tools=(aws terraform)
+    profiles=$(grep '^[[]profile' <~/.aws/config | awk '{print $2}' | sed 's/]$//')
+
+    if [ $# -eq 0 ]
+    then
+        echo "Please provide a profile from the following options:"
+        echo $profiles
+    else
+        export AWS_DEFAULT_PROFILE=$1
+        for i in ${awsacct_tools[@]}; do
+            alias $i="aws-vault exec --assume-role-ttl=60m $AWS_DEFAULT_PROFILE -- $i"
+        done
+    fi
+}
+
+function bucketsize() {
     local env=$1
     local region=$2
     local bucket=$3
@@ -26,7 +43,7 @@ bucketsize() {
     echo ${sizeinbytes}
 }
 
-bucketcost() {
+function bucketcost() {
     local env=$1
     local region=$2
     local bucket=$3
