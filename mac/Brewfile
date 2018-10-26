@@ -19,6 +19,7 @@ brew 'mas'
 brew 'maven'
 brew 'node'
 brew 'postgresql'
+brew 'pv' # Copy progress tool
 brew 'python'
 brew 'python3'
 brew 'rbenv'
@@ -38,6 +39,7 @@ brew 'zsh-completions'
 
 # Casks
 cask 'alfred'
+cask 'android-file-transfer'
 cask 'atom'
 cask 'aws-vault'
 cask 'blue-jeans' # video conferencing
