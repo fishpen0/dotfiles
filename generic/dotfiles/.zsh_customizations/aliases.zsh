@@ -52,3 +52,8 @@ function bucketcost() {
     local cost="$((0.024 * (${sizeinbytes} / 10000000000.0)))"
     echo $cost
 }
+
+#########
+# Other #
+#########
+alias slackify="figlet -f banner "$1" | sed -e's/#/:$2:/g' | sed -e's/ /:blank:/g' |pbcopy"
