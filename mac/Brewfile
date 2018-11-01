@@ -42,7 +42,6 @@ cask 'alfred'
 cask 'android-file-transfer'
 cask 'atom'
 cask 'aws-vault'
-cask 'blue-jeans' # video conferencing
 cask 'deathtodsstore' # TODO: launch automatically in mac init
 cask 'discord'
 cask 'docker'
@@ -68,6 +67,7 @@ cask 'steam'
 cask 'vagrant'
 cask 'virtualbox'
 cask 'vlc'
+cask 'zoomus' # video conferencing
 
 # App Store Apps
 mas 'HyperDock', id: 449830122
