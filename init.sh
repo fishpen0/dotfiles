@@ -7,17 +7,25 @@ run_generic() {
 
 # Do Debian Tasks
 run_debian() {
-  echo "debian"
+  echo "Debian based OS Detected."
+  debian/init.sh
+  run_generic
 }
 
 # Do RHEL Tasks
 run_rhel() {
-  echo "rhel"
+  echo "Rhel based OS Detected."
+  rhel/init.sh
+  run_generic
 }
 
 # Do OSX Tasks
 run_osx() {
-  echo "OSX!"
+  echo "Mac OS Detected."
+  cd mac
+  #./init.sh
+  cd ../
+  run_generic
 }
 
 # Detect OS
@@ -44,4 +52,3 @@ detect_os() {
 }
 
 detect_os
-run_generic
