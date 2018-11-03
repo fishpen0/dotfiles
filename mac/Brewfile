@@ -14,9 +14,13 @@ brew 'gnupg'
 brew 'gnupg2'
 brew 'gnu-tar', args: ["with-default-names"]
 brew 'gnu-sed', args: ["with-default-names"]
-brew 'jq'
+brew 'go', args: ["cross-compile-common"]
+brew 'grep', args: ["with-default-names"]
+brew 'imagemagick'
+brew 'jq' # JSON for bash
+brew 'less'
 brew 'mas'
-brew 'maven'
+brew 'mkvtoolnix' # MKV file manipulation
 brew 'node'
 brew 'postgresql'
 brew 'pv' # Copy progress tool
@@ -31,7 +35,9 @@ brew 'terraform'
 brew 'thefuck'
 brew 'trash'
 brew 'tree'
+brew 'unzip'
 brew 'vim', args: ["with-override-system-vi"]
+brew 'watch'
 brew 'wget'
 brew 'yarn'
 brew 'zsh'
@@ -53,7 +59,7 @@ cask 'google-chrome'
 cask 'iterm2'
 cask 'java'
 cask 'jetbrains-toolbox'
-cask 'magicprefs' #Magic mouse fix
+cask 'magicprefs' # Magic mouse fix
 cask 'meld'
 cask 'pgadmin4'
 cask 'postico' # pgadmin alternative
@@ -68,6 +74,9 @@ cask 'vagrant'
 cask 'virtualbox'
 cask 'vlc'
 cask 'zoomus' # video conferencing
+
+# Needs java first
+brew 'maven'
 
 # App Store Apps
 mas 'HyperDock', id: 449830122
