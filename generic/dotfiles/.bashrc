@@ -35,4 +35,8 @@
 #     ssh localhost 'echo "PS1: >$PS1<"'
 #
 
+# If mac do the thing
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
 [ -n "$PS1" ] && source ~/.bash_profile;
