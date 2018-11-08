@@ -16,6 +16,7 @@ antigen bundle kubectl
 antigen bundle npm
 antigen bundle node
 antigen bundle pip
+antigen bundle terraform
 antigen bundle thefuck
 
 # External bundles
