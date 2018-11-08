@@ -10,7 +10,11 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle colored-man-pages
 antigen bundle docker
+antigen bundle docker-compose
 antigen bundle git
+antigen bundle kubectl
+antigen bundle npm
+antigen bundle node
 antigen bundle pip
 antigen bundle thefuck
 
