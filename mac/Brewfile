@@ -18,6 +18,7 @@ brew 'go', args: ["cross-compile-common"]
 brew 'grep', args: ["with-default-names"]
 brew 'imagemagick'
 brew 'jq' # JSON for bash
+brew 'kubectl'
 brew 'less'
 brew 'mas'
 brew 'mkvtoolnix' # MKV file manipulation
