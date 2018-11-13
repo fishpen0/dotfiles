@@ -2,6 +2,9 @@
 tap "caskroom/cask"
 
 # Brews
+brew 'automake'
+brew 'autocong'
+brew 'asdf'
 brew 'antigen'
 brew 'awscli'
 brew 'bash'
@@ -19,15 +22,22 @@ brew 'grep', args: ["with-default-names"]
 brew 'imagemagick'
 brew 'jq' # JSON for bash
 brew 'kubectl'
+brew 'kubectx'
+brew 'kubernetes-helm'
 brew 'less'
+brew 'libtool'
+brew 'libxslt'
+brew 'libyaml'
 brew 'mas'
 brew 'mkvtoolnix' # MKV file manipulation
 brew 'node'
+brew 'openssl'
 brew 'postgresql'
 brew 'pv' # Copy progress tool
 brew 'python'
 brew 'python3'
 brew 'rbenv'
+brew 'readline'
 brew 'ruby'
 brew 'salt'
 brew 'screen'
@@ -36,6 +46,7 @@ brew 'terraform'
 brew 'thefuck'
 brew 'trash'
 brew 'tree'
+brew 'unixodbc'
 brew 'unzip'
 brew 'vim', args: ["with-override-system-vi"]
 brew 'watch'
@@ -63,6 +74,7 @@ cask 'java'
 cask 'jetbrains-toolbox'
 cask 'magicprefs' # Magic mouse fix
 cask 'meld'
+cask 'minikube'
 cask 'pgadmin4'
 cask 'postico' # pgadmin alternative
 cask 'postman' # rest api ui

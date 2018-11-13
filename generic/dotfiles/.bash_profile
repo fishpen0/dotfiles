@@ -62,3 +62,9 @@ export HISTTIMEFORMAT="${FG_BLUE}${FONT_BOLD}%Y-%m-%d %H:%M:%S${FONT_RESET}  ";
 # Do not autocomplete when accidentally pressing Tab on an empty line. (It takes
 # forever and yields "Display all 15 gazillion possibilites?")
 shopt -s no_empty_cmd_completion;
+
+########################
+# asdf version manager #
+########################
+
+source /usr/local/opt/asdf/asdf.sh

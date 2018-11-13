@@ -141,3 +141,9 @@ source /usr/local/share/antigen/antigen.zsh
 
 # Goto .antigenrc for antigen config
 source ~/.antigenrc
+
+########################
+# asdf version manager #
+########################
+
+source /usr/local/opt/asdf/asdf.sh
