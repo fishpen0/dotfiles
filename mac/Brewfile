@@ -3,7 +3,7 @@ tap "caskroom/cask"
 
 # Brews
 brew 'automake'
-brew 'autocong'
+brew 'autoconf'
 brew 'asdf'
 brew 'antigen'
 brew 'awscli'
@@ -24,7 +24,7 @@ brew 'jq' # JSON for bash
 brew 'kubectl'
 brew 'kubectx'
 brew 'kubernetes-helm'
-brew 'lastpass-cli' ["with-pinentry"]
+brew 'lastpass-cli', args: ["with-pinentry"]
 brew 'less'
 brew 'libtool'
 brew 'libxslt'
