@@ -76,6 +76,7 @@ cask 'jetbrains-toolbox'
 cask 'magicprefs' # Magic mouse fix
 cask 'meld'
 cask 'minikube'
+cask 'mute-me' # microphone toggle for touch bar
 cask 'pgadmin4'
 cask 'postico' # pgadmin alternative
 cask 'postman' # rest api ui
