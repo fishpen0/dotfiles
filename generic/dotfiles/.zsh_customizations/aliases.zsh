@@ -56,4 +56,12 @@ function bucketcost() {
 #########
 # Other #
 #########
-alias slackify="figlet -f banner "$1" | sed -e's/#/:$2:/g' | sed -e's/ /:blank:/g' |pbcopy"
+function slackify() {
+  LENGTH=$((${#1}*${#2}))
+  echo $LENGTH
+  if [ $LENGTH -gt 4000 ]; then
+    echo "Your string is too long"
+  else
+    figlet -f banner "$1" | sed -e's/#/'$2'/g' | sed -e's/ /:blank:/g' | pbcopy
+  fi
+}
