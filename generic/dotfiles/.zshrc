@@ -89,7 +89,7 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=%n
 # Dir Config
 # POWERLEVEL9K_SHORTEN_STRATEGY=truncate_with_folder_marker
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_SHORTEN_FOLDER_MARKER=.git
+# POWERLEVEL9K_SHORTEN_FOLDER_MARKER=(.git|.hg|.terraform)
 
 # Custom functions
 zsh_aws() {
@@ -141,6 +141,15 @@ source /usr/local/share/antigen/antigen.zsh
 
 # Goto .antigenrc for antigen config
 source ~/.antigenrc
+
+############################
+# Antibody Package Manager #
+############################
+
+# Import antibody
+# source <(antibody init)
+# antibody bundle < ~/.antibodyrc
+
 
 ########################
 # asdf version manager #

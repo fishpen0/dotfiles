@@ -1,5 +1,8 @@
 # Taps
-tap "caskroom/cask"
+tap "getantibody/tap"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
 
 # Brews
 brew 'automake'
@@ -11,6 +14,7 @@ brew 'bash'
 brew 'bash-completion2'
 brew 'coreutils'
 brew 'findutils', args: ["with-default-names"]
+brew "getantibody/tap/antibody"
 brew 'git'
 brew 'git-lfs'
 brew 'gnupg'
