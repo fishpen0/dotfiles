@@ -70,10 +70,10 @@ cask 'discord'
 cask 'docker'
 cask 'dropbox'
 cask 'firefox'
-cask 'handylock'
 cask 'gimp'
 cask 'google-chrome'
 cask 'google-cloud-sdk'
+cask 'handylock'
 cask 'iterm2'
 cask 'java'
 cask 'jetbrains-toolbox'
@@ -81,6 +81,7 @@ cask 'magicprefs' # Magic mouse fix
 cask 'meld'
 cask 'minikube'
 cask 'mute-me' # microphone toggle for touch bar
+cask 'muzzle' # auto-enable do not disturb on screenshares
 cask 'pgadmin4'
 cask 'postico' # pgadmin alternative
 cask 'postman' # rest api ui
@@ -92,6 +93,7 @@ cask 'spotify'
 cask 'steam'
 cask 'vagrant'
 cask 'virtualbox'
+cask 'visual-studio-code'
 cask 'vlc'
 cask 'zoomus' # video conferencing
 
