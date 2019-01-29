@@ -43,13 +43,8 @@ npm install -g iterm2-tab-set
 # Mac OS #
 ##########
 
-# Don't write DS_Store files to nfs volumes
-defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-
-# Change default screenshot directory
-mkdir ~/Documents/Screenshots
-defaults write com.apple.screencapture location ~/Documents/Screenshots
-killall SystemUIServer
+# Execute Mac OS configuration tasks
+source .macos
 
 ###############
 # Shell Stuff #
