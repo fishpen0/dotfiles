@@ -12,3 +12,12 @@
     branches = --no-pager branch -a
     l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     s = status -s
+
+# Safety mechanism for commit identities
+# Add a .gitconfig file to below directories with alternate [user] information
+[includeIf "gitdir:~/dev/ps/"]
+    path = ~/dev/ps/.gitconfig
+[includeIf "gitdir:~/dev/personal/"]
+    path = ~/dev/personal/.gitconfig
+[includeIf "gitdir:~/dev/public/"]
+    path = ~/dev/public/.gitconfig
