@@ -12,17 +12,3 @@
     branches = --no-pager branch -a
     l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     s = status -s
-[diff]
-    tool = meld
-[difftool]
-    prompt = false
-[difftool "meld"]
-    trustExitCode = true
-    cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
-[merge]
-    tool = meld
-[mergetool]
-    prompt = false
-[mergetool "meld"]
-    trustExitCode = true
-    cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
