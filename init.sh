@@ -50,9 +50,6 @@ source .macos
 # Shell Stuff #
 ###############
 
-# Suppress osx motd
-touch ~/.hushlogin
-
 # Fix Bash to default to bash 4
 echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
 chsh -s /usr/local/bin/bash;
