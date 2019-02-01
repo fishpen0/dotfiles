@@ -1,16 +1,35 @@
 #! /bin/sh
 
-echo "Running MacOs Tasks"
+##########
+# Warmup #
+##########
+
+echo "Running Setup Tasks"
+
+# Copy dotfiles to home
+echo "Copying Configuration files"
+cp -av dotfiles/. ~/
 
 # Enable xcode clt
-xcode-select --install
+if [ $(xcode-select -p) ] ; then
+    echo "Skipping xcode installation.  Already Installed"
+else
+    echo "Installing xcode"
+    xcode-select --install
+fi
 
 ############
 # Homebrew #
 ############
 
 # Install
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+which -s brew
+if [[ $? == 0 ]] ; then
+    echo "Skipping Brew installation.  Already Installed"
+else
+    echo "Installing Brew"
+    # /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
 # Disable Tracking
 brew analytics off
@@ -22,7 +41,7 @@ brew tap caskroom/cask
 brew install mas
 
 # Install Brewfile
-brew bundle 
+brew bundle --file=~/Brewfile
 
 # Done
 brew upgrade
@@ -32,9 +51,9 @@ brew cleanup
 # Iterm #
 #########
 
-# Copy Iterm Configs
-cp -r .iterm2/ ~/.iterm2/
-cp .iterm2_* ~/
+# TODO: Copy Iterm Configs
+# cp -r .iterm2/ ~/.iterm2/
+# cp .iterm2_* ~/
 
 # Install Iterm Tab Setter
 npm install -g iterm2-tab-set
@@ -44,7 +63,7 @@ npm install -g iterm2-tab-set
 ##########
 
 # Execute Mac OS configuration tasks
-source .macos
+source ~/.macos
 
 ###############
 # Shell Stuff #
@@ -55,9 +74,11 @@ echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
 chsh -s /usr/local/bin/bash;
 
 # Install powerline fonts
-unzip ../fonts/Inconsolata.zip -d /Library/Fonts
+echo "Installing powerline fonts"
+unzip fonts/Inconsolata.zip -d /Library/Fonts
 
 # Install oh-my-zsh
+echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 echo "Downloading latest iterm integration files for bash"
@@ -66,18 +87,19 @@ curl -sL https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integratio
 echo "Downloading latest iterm integration files for zsh"
 curl -sL https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 
-######################
-# Visual-studio-code #
-######################
-
-# Install extensions
-while IFS='' read -r line || [[ -n "$extension" ]]; do
-    code --install-extension $extension
-done < "../generic/vscode/extensions"
-
 ###########
 # crontab #
 ###########
 
 echo "Installing crontab"
 crontab ~/.cron
+
+######################
+# Visual-studio-code #
+######################
+
+# Install extensions
+echo "Installing vscode extensions"
+while IFS='' read -r line || [[ -n "$extension" ]]; do
+    code --install-extension $extension
+done < "vscode/extensions"
