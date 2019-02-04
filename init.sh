@@ -70,8 +70,17 @@ source ~/.macos
 ###############
 
 # Fix Bash to default to bash 4
-echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-chsh -s /usr/local/bin/bash;
+if ! grep -Fxq "/usr/local/bin/bash" /etc/shells
+then
+    echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+fi
+
+# Make ZSH default shell
+if ! grep -Fxq "/usr/local/bin/zsh" /etc/shells
+then
+    echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
+fi
+chsh -s /usr/local/bin/zsh;
 
 # Install powerline fonts
 echo "Installing powerline fonts"
