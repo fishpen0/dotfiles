@@ -109,6 +109,6 @@ crontab ~/.cron
 
 # Install extensions
 echo "Installing vscode extensions"
-while IFS='' read -r line || [[ -n "$extension" ]]; do
+while IFS='' read -r extension || [[ -n "$extension" ]]; do
     code --install-extension $extension
 done < "vscode/extensions"
