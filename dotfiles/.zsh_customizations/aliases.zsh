@@ -68,6 +68,12 @@ function rds-vacuum-logs() {
     # done 
 }
 
+#############
+# Git Repos #
+#############
+GIT_DIR_PERSONAL="~/dev/personal"
+alias dotfiles="code $GIT_DIR_PERSONAL/dotfiles"
+
 
 #########
 # Other #
