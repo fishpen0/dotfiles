@@ -53,6 +53,22 @@ function bucketcost() {
     echo $cost
 }
 
+
+function rds-vacuum-logs() {
+    local env=$1
+    local region=us-west-2
+    local db_name=roleiq-production
+    # local schema_name=roleiq
+    # local table_name=table1
+    local hours_to_check=24
+
+    $(aws-vault exec "${env}" -- aws rds describe-db-log-files --region ${region} --db-instance-identifier ${db_name} --output text | sort -k2 -n | tail -${hours_to_check} | awk -F' ' '{print $3}' )# | while read i;
+    # do
+    # aws rds download-db-log-file-portion --region ${region} --db-instance-identifier ${db_name} --log-file-name ${i} --output text | grep -A 5 "automatic vacuum of table \"${db_name}.${schema_name}.${table_name}\""
+    # done 
+}
+
+
 #########
 # Other #
 #########
