@@ -103,12 +103,20 @@ curl -sL https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration
 echo "Installing crontab"
 crontab ~/.cron
 
-######################
-# Visual-studio-code #
-######################
+################
+# Applications #
+################
 
-# Install extensions
+# visual-studio-code
+
+## Install extensions
 echo "Installing vscode extensions"
 while IFS='' read -r extension || [[ -n "$extension" ]]; do
     code --install-extension $extension
 done < "vscode/extensions"
+
+# Steermouse
+
+## Ensure System settings is killed, then copy settings over
+osascript -e 'tell application "System Preferences" to quit'
+cp steermouse/Device.smsetting ~/Library/Application\ Support/SteerMouse\ \&\ CursorSense/
