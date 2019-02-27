@@ -74,6 +74,19 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+
 #######################
 # Powerlevel9k Config #
 #######################
@@ -103,8 +116,9 @@ zsh_terraform() {
   # break if there is no .terraform directory
   if [[ -d .terraform ]]; then
     local tf_workspace=$(/usr/local/bin/terraform workspace show)
+    local tf_region=$(readlink backend.tf | awk -F. '{print $3}')
     local color='%F{99}'
-    echo -n "\ufbdf $tf_workspace"
+    echo -n "\ufbdf $tf_workspace:$tf_region"
   fi
 }
 
