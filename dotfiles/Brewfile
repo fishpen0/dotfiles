@@ -36,6 +36,7 @@ brew 'libyaml'
 brew 'mas'
 brew 'mkvtoolnix' # MKV file manipulation
 brew 'node'
+brew 'notion'
 brew 'openssl'
 brew 'postgresql'
 brew 'pv' # Copy progress tool
