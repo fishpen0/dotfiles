@@ -3,6 +3,16 @@
 # ZSH Related
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 
+# Assume vscode should open current dir
+function smart_code() {
+    if [[ -z $1 ]] ; then
+        command code .
+    else
+        command code "$@"
+    fi
+}
+alias code=smart_code
+
 # IP addresses
 alias publicip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
@@ -74,6 +84,25 @@ function rds-vacuum-logs() {
 GIT_DIR_PERSONAL="~/dev/personal"
 alias dotfiles="code $GIT_DIR_PERSONAL/dotfiles"
 
+
+#############
+# Terraform #
+#############
+
+function tf() {
+    select FILENAME in *;
+    do
+        case $FILENAME in
+            "$QUIT")
+            echo "Exiting."
+            break
+            ;;
+            *)
+            echo "You picked $FILENAME ($REPLY)"
+            ;;
+    esac
+    done
+}
 
 #########
 # Other #
