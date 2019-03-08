@@ -37,7 +37,6 @@ brew 'libyaml'
 brew 'mas'
 brew 'mkvtoolnix' # MKV file manipulation
 brew 'node'
-brew 'notion'
 brew 'openssl'
 brew 'pinentry' # Optional dep for lastpass
 brew 'postgresql'
@@ -85,6 +84,7 @@ cask 'meld'
 cask 'minikube'
 cask 'mute-me' # microphone toggle for touch bar
 cask 'muzzle' # auto-enable do not disturb on screenshares
+cask 'notion'
 cask 'pgadmin4'
 cask 'postico' # pgadmin alternative
 cask 'postman' # rest api ui
