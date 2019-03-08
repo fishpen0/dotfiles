@@ -13,6 +13,7 @@ brew 'awscli'
 brew 'bash'
 brew 'bash-completion2'
 brew 'coreutils'
+brew 'csvtool'
 brew 'findutils', args: ["with-default-names"]
 brew "getantibody/tap/antibody"
 brew 'git'
@@ -21,14 +22,14 @@ brew 'gnupg'
 brew 'gnupg2'
 brew 'gnu-tar', args: ["with-default-names"]
 brew 'gnu-sed', args: ["with-default-names"]
-brew 'go', args: ["cross-compile-common"]
+brew 'go'
 brew 'grep', args: ["with-default-names"]
 brew 'imagemagick'
 brew 'jq' # JSON for bash
 brew 'kubectl'
 brew 'kubectx'
 brew 'kubernetes-helm'
-brew 'lastpass-cli', args: ["with-pinentry"]
+brew 'lastpass-cli'
 brew 'less'
 brew 'libtool'
 brew 'libxslt'
@@ -38,6 +39,7 @@ brew 'mkvtoolnix' # MKV file manipulation
 brew 'node'
 brew 'notion'
 brew 'openssl'
+brew 'pinentry' # Optional dep for lastpass
 brew 'postgresql'
 brew 'pv' # Copy progress tool
 brew 'python'
@@ -54,7 +56,7 @@ brew 'trash'
 brew 'tree'
 brew 'unixodbc'
 brew 'unzip'
-brew 'vim', args: ["with-override-system-vi"]
+brew 'vim'
 brew 'watch'
 brew 'wget'
 brew 'yarn'
