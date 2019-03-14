@@ -1,0 +1,19 @@
+# oh-my-zsh plugins
+robbyrussell/oh-my-zsh path:plugins/colored-man-pages
+robbyrussell/oh-my-zsh path:plugins/docker
+robbyrussell/oh-my-zsh path:plugins/docker-compose
+robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:plugins/kubectl
+robbyrussell/oh-my-zsh path:plugins/npm
+robbyrussell/oh-my-zsh path:plugins/node
+robbyrussell/oh-my-zsh path:plugins/pip
+robbyrussell/oh-my-zsh path:plugins/terraform
+robbyrussell/oh-my-zsh path:plugins/thefuck
+
+# zsh-users plugins
+zsh-users/zsh-apple-touchbar
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+
+# Load the theme
+# bhilburn/powerlevel9k powerlevel9k
