@@ -3,6 +3,7 @@ tap "getantibody/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "wata727/tflint"
 
 # Brews
 brew 'automake'
@@ -50,6 +51,7 @@ brew 'salt'
 brew 'screen'
 brew 'stress'
 brew 'terraform'
+brew 'tflint'
 brew 'thefuck'
 brew 'trash'
 brew 'tree'
