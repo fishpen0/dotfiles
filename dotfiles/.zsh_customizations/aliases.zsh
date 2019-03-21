@@ -32,7 +32,6 @@ function awsacct() {
 
     if [ $# -eq 0 ]
     then
-        echo "Please provide a profile from the following options:"
         echo $profiles
     else
         export AWS_DEFAULT_PROFILE=$1
@@ -84,6 +83,39 @@ function rds-vacuum-logs() {
 GIT_DIR_PERSONAL="~/dev/personal"
 alias dotfiles="code $GIT_DIR_PERSONAL/dotfiles"
 
+##############
+# Kubernetes #
+##############
+
+function kubeacct {
+    if [ -z "$1" ]
+    then
+        kubectl config get-contexts
+    else
+        kubectl config use-context $1
+        export TILLER_NAMESPACE=$1
+        
+    fi
+}
+
+function kubens {
+    if [ -z "$1" ]
+    then
+        /usr/local/bin/kubens
+    else
+        namespace=$1
+        /usr/local/bin/kubens $namespace
+        export TILLER_NAMESPACE=$namespace
+    fi
+}
+
+function kube_on {
+    export KUBERNETES_DISPLAY=1
+}
+
+function kube_off {
+    export KUBERNETES_DISPLAY=0
+}
 
 #############
 # Terraform #
