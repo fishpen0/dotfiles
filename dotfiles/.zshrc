@@ -112,6 +112,14 @@ zsh_aws() {
   fi
 }
 
+zsh_kubernetes() {
+  if [[ ${KUBERNETES_DISPLAY} ]]; then
+    context=$(kubectl config current-context)
+    local color='%F{68}'
+    echo -n "\ufd31 ${context}"
+  fi
+}
+
 zsh_terraform() {
   # break if there is no .terraform directory
   if [[ -d .terraform ]]; then
@@ -126,6 +134,11 @@ zsh_terraform() {
 POWERLEVEL9K_CUSTOM_AWS="zsh_aws"
 POWERLEVEL9K_CUSTOM_AWS_BACKGROUND=202
 POWERLEVEL9K_CUSTOM_AWS_FOREGROUND=015
+
+# AWS Segment
+POWERLEVEL9K_CUSTOM_KUBERNETES="zsh_kubernetes"
+POWERLEVEL9K_CUSTOM_KUBERNETES_BACKGROUND=099
+POWERLEVEL9K_CUSTOM_KUBERNETES_FOREGROUND=015
 
 # Terraform Segment
 POWERLEVEL9K_CUSTOM_TERRAFORM="zsh_terraform"
@@ -143,7 +156,7 @@ POWERLEVEL9K_VCS_GIT_GITLAB_ICON=''
 POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=''
 
 # Segments Config
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir custom_aws custom_terraform virtualenv rbenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir custom_aws custom_kubernetes custom_terraform virtualenv rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 
 ###########################
@@ -170,3 +183,28 @@ source ~/.antigenrc
 ########################
 
 source /usr/local/opt/asdf/asdf.sh
+
+####################
+# History Settings #
+####################
+
+# If a new command line being added to the history list duplicates an older one, 
+# the older command is removed from the list (even if it is not the previous event).
+setopt HIST_IGNORE_ALL_DUPS
+
+# Remove the history (fc -l) command from the history list when invoked. 
+# Note that the command lingers in the internal history until the next command is 
+# entered before it vanishes, allowing you to briefly reuse or edit the line.
+setopt HIST_NO_STORE
+
+# When searching for history entries in the line editor, do not display duplicates
+# of a line previously found, even if the duplicates are not contiguous.
+setopt HIST_FIND_NO_DUPS
+
+# When writing out the history file, older commands that duplicate newer ones are omitted.
+setopt HIST_SAVE_NO_DUPS
+
+# Save each command’s beginning timestamp (in seconds since the epoch) and the
+# duration (in seconds) to the history file. The format of this prefixed data is:
+# ‘: <beginning time>:<elapsed seconds>;<command>’.
+setopt EXTENDED_HISTORY
