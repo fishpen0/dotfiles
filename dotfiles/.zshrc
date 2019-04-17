@@ -124,9 +124,31 @@ zsh_terraform() {
   # break if there is no .terraform directory
   if [[ -d .terraform ]]; then
     local tf_workspace=$(/usr/local/bin/terraform workspace show)
+    local tf_short_workspace=${tf_workspace:0:1:u}
     local tf_region=$(readlink backend.tf | awk -F. '{print $3}')
-    local color='%F{99}'
-    echo -n "\ufbdf $tf_workspace:$tf_region"
+
+    if [[ $tf_short_workspace == "P" ]]
+    then
+      local color='%F{red}'
+    else
+      local color='%F{white}'
+    fi 
+
+    case $tf_region in
+      us-west-2)
+        local tf_short_region="UW2"
+        ;;
+      us-west-2)
+        local tf_short_region="UE2"
+        local color='%F{red}'
+        ;;
+      *)
+        local tf_short_region=$tf_region
+        local color='%F{yellow}'
+        ;;
+    esac
+
+    echo -n "%{$color%}\ufbdf $tf_short_workspace:$tf_short_region%{%f%}"
   fi
 }
 
