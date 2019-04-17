@@ -38,6 +38,7 @@ brew 'libyaml'
 brew 'mas'
 brew 'mkvtoolnix' # MKV file manipulation
 brew 'node'
+brew 'openldap'
 brew 'openssl'
 brew 'pinentry' # Optional dep for lastpass
 brew 'postgresql'
