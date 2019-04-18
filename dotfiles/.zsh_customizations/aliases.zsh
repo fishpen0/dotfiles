@@ -42,7 +42,12 @@ function awsacct() {
 }
 
 function awscssh() {
-    tmux-cssh `get-instance-ips $1 $2` 
+    if [[ $AWS_DEFAULT_PROFILE == "default" ]]
+    then 
+        echo "please set your aws profile with awsacct"
+    else
+        tmux-cssh `get-instance-ips $1 $2` 
+    fi
 }
 
 function bucketsize() {
