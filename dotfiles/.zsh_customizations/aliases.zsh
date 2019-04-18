@@ -41,6 +41,10 @@ function awsacct() {
     fi
 }
 
+function awscssh() {
+    tmux-cssh `get-instance-ips $1 $2` 
+}
+
 function bucketsize() {
     local env=$1
     local region=$2
@@ -60,6 +64,12 @@ function bucketcost() {
     local sizeinbytes=$(bucketsize ${env} ${region} ${bucket})
     local cost="$((0.024 * (${sizeinbytes} / 10000000000.0)))"
     echo $cost
+}
+
+function get-instance-ips() {
+    env=$1
+    roles=$2
+    aws-vault exec --assume-role-ttl=60m $AWS_DEFAULT_PROFILE -- aws ec2 describe-instances --filters "Name=tag:roles,Values=$roles" "Name=tag:env,Values=$env" --query "Reservations[*].Instances[*].PrivateIpAddress" --output=text
 }
 
 
