@@ -67,9 +67,14 @@ function bucketcost() {
 }
 
 function get-instance-ips() {
-    env=$1
-    roles=$2
-    aws-vault exec --assume-role-ttl=60m $AWS_DEFAULT_PROFILE -- aws ec2 describe-instances --filters "Name=tag:roles,Values=$roles" "Name=tag:env,Values=$env" --query "Reservations[*].Instances[*].PrivateIpAddress" --output=text
+    if [[ $AWS_DEFAULT_PROFILE == "default" ]]
+    then 
+        echo "please set your aws profile with awsacct"
+    else
+        env=$1
+        roles=$2
+        aws-vault exec --assume-role-ttl=60m $AWS_DEFAULT_PROFILE -- aws ec2 describe-instances --filters "Name=tag:roles,Values=$roles" "Name=tag:env,Values=$env" --query "Reservations[*].Instances[*].PrivateIpAddress" --output=text
+    fi
 }
 
 
