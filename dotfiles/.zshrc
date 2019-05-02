@@ -181,6 +181,13 @@ POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=''
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir custom_aws custom_kubernetes custom_terraform virtualenv rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 
+##################
+# Aliases Config #
+##################
+
+# Force zsh to autocomplete custom aliases
+setopt COMPLETE_ALIASES
+
 ###########################
 # Antigen Package Manager #
 ###########################
