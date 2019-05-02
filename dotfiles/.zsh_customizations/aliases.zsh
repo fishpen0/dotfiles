@@ -101,7 +101,9 @@ function rds-vacuum-logs() {
 # Git Repos #
 #############
 GIT_DIR_PERSONAL="~/dev/personal"
+GIT_DIR_WORK="~/dev/ps"
 alias dotfiles="code $GIT_DIR_PERSONAL/dotfiles"
+alias inf="code $GIT_DIR_WORK/infrastructure"
 
 ##############
 # Kubernetes #
