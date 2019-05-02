@@ -103,6 +103,15 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
+# Install keyboard shortcuts
+defaults write "Apple Global Domain" NSUserDictionaryReplacementItems '(
+        {
+        on = 1;
+        replace = flip;
+        with = "(\\U256f\\U00b0\\U25a1\\U00b0)\\U256f\\Ufe35 \\U253b\\U2501\\U253b";
+    }
+)'
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
