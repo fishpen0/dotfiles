@@ -137,6 +137,21 @@ function kube_off {
     export KUBERNETES_DISPLAY=0
 }
 
+###########
+# Network #
+###########
+
+function spoof(){
+    local old_mac=$(ifconfig en0 | grep ether | awk '{print $2}')
+    local new_mac=`openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'`
+    sudo ifconfig en0 ether $new_mac
+    echo "$old_mac => $new_mac"
+}
+
+function unspoof(){
+    echo "TODO: MAKE THIS WORK"
+}
+
 #############
 # Terraform #
 #############
