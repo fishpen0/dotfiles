@@ -71,6 +71,7 @@ cask 'alfred'
 cask 'atom'
 cask 'aws-vault'
 cask 'bitwarden'
+cask 'brooklyn'
 cask 'deathtodsstore' # TODO: launch automatically in mac init
 cask 'discord'
 cask 'docker'
