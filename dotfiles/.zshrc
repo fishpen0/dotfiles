@@ -120,6 +120,29 @@ zsh_kubernetes() {
   fi
 }
 
+zsh_randicon(){ 
+  randicons=(
+    "\uf1a8" # Pied Piper
+    "\uf2cd" # Bathtub
+    "\uf21b" # Spy
+    "\ue286" # Biohazard
+    "\ue28d" # Bread
+    "\ue28c" # Brain
+    "\ue29f" # Chicken
+    "\ue260" # king
+    "\ue273" # donut
+    "\ue24b" # intestines
+    "\ue231" # poison
+    "\ue238" # radioactive
+    "\uf614" # hundo
+    "\uf64e" # clippy
+    "\uf6e4" # duck
+    "\uf79f" # ghost
+  )
+  random=$(($[$$$(date +%s) % ${#randicons[@]}] + 1))
+  echo -n "${randicons[$random]}"
+}
+
 zsh_terraform() {
   # break if there is no .terraform directory
   if [[ -d .terraform ]]; then
@@ -162,6 +185,11 @@ POWERLEVEL9K_CUSTOM_KUBERNETES="zsh_kubernetes"
 POWERLEVEL9K_CUSTOM_KUBERNETES_BACKGROUND=099
 POWERLEVEL9K_CUSTOM_KUBERNETES_FOREGROUND=015
 
+# Random Icon Segment
+POWERLEVEL9K_CUSTOM_RANDICON="zsh_randicon"
+POWERLEVEL9K_CUSTOM_RANDICON_BACKGROUND=000
+POWERLEVEL9K_CUSTOM_RANDICON_FOREGROUND=011
+
 # Terraform Segment
 POWERLEVEL9K_CUSTOM_TERRAFORM="zsh_terraform"
 POWERLEVEL9K_CUSTOM_TERRAFORM_BACKGROUND=057
@@ -178,7 +206,7 @@ POWERLEVEL9K_VCS_GIT_GITLAB_ICON=''
 POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=''
 
 # Segments Config
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir custom_aws custom_kubernetes custom_terraform virtualenv rbenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_randicon dir custom_aws custom_kubernetes custom_terraform virtualenv rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 
 ##################
