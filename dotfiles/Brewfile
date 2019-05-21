@@ -68,7 +68,6 @@ brew 'zsh-completions'
 
 # Casks
 cask 'alfred'
-cask 'android-file-transfer'
 cask 'atom'
 cask 'aws-vault'
 cask 'bitwarden'
