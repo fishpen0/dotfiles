@@ -124,7 +124,6 @@ zsh_randicon(){
   randicons=(
     "\uf1a8" # Pied Piper
     "\uf2cd" # Bathtub
-    "\uf21b" # Spy
     "\ue286" # Biohazard
     "\ue28d" # Bread
     "\ue28c" # Brain
@@ -138,6 +137,30 @@ zsh_randicon(){
     "\uf64e" # clippy
     "\uf6e4" # duck
     "\uf79f" # ghost
+    "\ue36a" # meteor
+    "\ue36e" # alien
+    "\ue000" # japanese arch
+    "\ue006" # palm tree
+    "\uf483" #squirrel
+    "\uf427" # rocket
+    "\uf490" # fire
+    "\uf499" # beaker
+    "\uf7b3" # controller
+    "\ufa2a" # traffic light
+    "\ufa28" # tooth
+    "\ufb67" # test tube
+    "\ue219" # taco
+    "\ue251" # hotdog
+    "\ufb8a" # skull
+    "\ufb08" # saxophone
+    "\uf901" # pill
+    "\uf872" # creeper
+    "\uf855" # martini
+    "\ufcd3" # lava lamp
+    "\ue24d" # burger
+    "\uf7a4" # glass flute
+    "\uf7a5" # mug
+    "\uf699" # cow
   )
   random=$(($[$$$(date +%s) % ${#randicons[@]}] + 1))
   echo -n "${randicons[$random]}"
