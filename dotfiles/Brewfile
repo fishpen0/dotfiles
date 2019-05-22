@@ -25,6 +25,7 @@ brew 'gnupg2'
 brew 'gnu-tar', args: ["with-default-names"]
 brew 'gnu-sed', args: ["with-default-names"]
 brew 'go'
+brew 'graphviz' # generate images from graph files
 brew 'grep', args: ["with-default-names"]
 brew 'imagemagick'
 brew 'jq' # JSON for bash
