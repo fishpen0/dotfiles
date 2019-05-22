@@ -84,6 +84,8 @@ cask 'handylock'
 cask 'iterm2'
 cask 'java'
 cask 'jetbrains-toolbox'
+cask 'keybase'
+cask 'kubernetic'
 cask 'magicprefs' # Magic mouse fix
 cask 'meld'
 cask 'minikube'
@@ -103,6 +105,7 @@ cask 'vagrant'
 cask 'virtualbox'
 cask 'visual-studio-code'
 cask 'vlc'
+cask 'yubico-yubikey-manager'
 cask 'zoomus' # video conferencing
 
 # Needs java first
