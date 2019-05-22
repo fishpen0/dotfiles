@@ -96,9 +96,9 @@ cask 'postman' # rest api ui
 cask 'pritunl' # openvpn altrernative client
 cask 'private-internet-access'
 cask 'slack'
-cask 'steermouse' # Better than usb overdrive
 cask 'spotify'
 cask 'steam'
+cask 'steermouse' # Better than usb overdrive
 cask 'vagrant'
 cask 'virtualbox'
 cask 'visual-studio-code'
