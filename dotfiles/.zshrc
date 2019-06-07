@@ -15,6 +15,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+# Setup ruby path to point to --user-install path
+if which ruby >/dev/null && which gem >/dev/null; then                                                                                                    127 ↵  4389  11:46:41
+    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 #######################
 # Environment Changes #
 #######################
