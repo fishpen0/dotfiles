@@ -47,6 +47,16 @@ brew bundle --file=~/Brewfile
 brew upgrade
 brew cleanup
 
+##################
+# Other Packages #
+##################
+
+# Color ls
+gem install colorls --user-install
+
+# Lolcat
+gem install lolcat --user-install
+
 #########
 # Iterm #
 #########
