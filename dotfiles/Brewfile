@@ -38,6 +38,7 @@ brew 'libtool'
 brew 'libxslt'
 brew 'libyaml'
 brew 'mas'
+brew 'minikube'
 brew 'mkvtoolnix' # MKV file manipulation
 brew 'node'
 brew 'openldap'
@@ -89,7 +90,6 @@ cask 'keybase'
 cask 'kubernetic'
 cask 'magicprefs' # Magic mouse fix
 cask 'meld'
-cask 'minikube'
 cask 'mute-me' # microphone toggle for touch bar
 cask 'muzzle' # auto-enable do not disturb on screenshares
 cask 'notion'
