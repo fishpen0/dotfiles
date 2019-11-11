@@ -3,7 +3,6 @@ tap "getantibody/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-tap "wata727/tflint"
 
 # Brews
 brew 'automake'
