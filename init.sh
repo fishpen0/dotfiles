@@ -51,6 +51,9 @@ brew cleanup
 # Other Packages #
 ##################
 
+# Update pip
+pip install --upgrade pip setuptools
+
 # Color ls
 gem install colorls --user-install
 
