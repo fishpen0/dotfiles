@@ -15,6 +15,18 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+# Use zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# Use brew sqlite
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+
+# Use brew curl
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
+# Use brew unzip
+export PATH="/usr/local/opt/unzip/bin:$PATH"
+
 # Setup ruby path to point to --user-install path
 if which ruby >/dev/null && which gem >/dev/null; then                                                                                                    127 ↵  4389  11:46:41
     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
