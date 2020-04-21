@@ -50,6 +50,7 @@ brew 'python'
 brew 'python3'
 brew 'rbenv'
 brew 'readline'
+brew 'reattach-to-user-namespace' # TMUX patch for fixing copy/paste on macos
 brew 'ruby'
 brew 'salt'
 brew 'screen'
