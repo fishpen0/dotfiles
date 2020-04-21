@@ -15,6 +15,7 @@ brew 'bash-completion2'
 brew 'bitwarden-cli'
 brew 'coreutils'
 brew 'csvtool'
+brew 'dive' #docker image layer explorer
 brew 'findutils', args: ["with-default-names"]
 brew "getantibody/tap/antibody"
 brew 'git'
