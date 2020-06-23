@@ -131,9 +131,10 @@ zsh_aws() {
 
 zsh_kubernetes() {
   if [[ ${KUBERNETES_DISPLAY} ]]; then
-    context=$(kubectl config current-context)
+    context=$(kubectl config current-context | awk -F\. '{print $1}')
+    namespace=$(kubectl config view --minify --output 'jsonpath={..namespace}')
     local color='%F{68}'
-    echo -n "\ufd31 ${context}"
+    echo -n "\ufd31 ${context} | ${namespace}"
   fi
 }
 

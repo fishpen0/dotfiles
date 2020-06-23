@@ -109,6 +109,14 @@ alias inf="code $GIT_DIR_WORK/infrastructure"
 # Kubernetes #
 ##############
 
+function kube_on {
+    export KUBERNETES_DISPLAY=1
+}
+
+function kube_off {
+    unset KUBERNETES_DISPLAY
+}
+
 function kubeacct {
     if [ -z "$1" ]
     then
@@ -129,14 +137,6 @@ function kubens {
         /usr/local/bin/kubens $namespace
         export TILLER_NAMESPACE=$namespace
     fi
-}
-
-function kube_on {
-    export KUBERNETES_DISPLAY=1
-}
-
-function kube_off {
-    export KUBERNETES_DISPLAY=0
 }
 
 ###########
