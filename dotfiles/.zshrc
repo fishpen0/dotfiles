@@ -275,31 +275,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs histor
 # Force zsh to autocomplete custom aliases
 setopt COMPLETE_ALIASES
 
-###########################
-# Antigen Package Manager #
-###########################
-
-# Import antigen
-source /usr/local/share/antigen/antigen.zsh
-
-# Goto .antigenrc for antigen config
-source ~/.antigenrc
-
-############################
-# Antibody Package Manager #
-############################
-
-# Import antibody
-# source <(antibody init)
-# antibody bundle < ~/.antibodyrc
-
-
-########################
-# asdf version manager #
-########################
-
-source /usr/local/opt/asdf/asdf.sh
-
 ####################
 # History Settings #
 ####################
