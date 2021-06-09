@@ -190,3 +190,101 @@ function slackify() {
     figlet -f banner "$1" | sed -e's/#/'$2'/g' | sed -e's/ /:blank:/g' | pbcopy
   fi
 }
+
+######################
+# ZSH Theme segments #
+######################
+
+zsh_aws() {
+  if [ "$AWS_DEFAULT_PROFILE" != "default" ]; then
+    local color='%F{208}'
+    echo -n "\ue7ad ${AWS_DEFAULT_PROFILE}"
+  fi
+}
+
+zsh_kubernetes() {
+  if [[ ${KUBERNETES_DISPLAY} ]]; then
+    context=$(kubectl config current-context | awk -F\. '{print $1}')
+    namespace=$(kubectl config view --minify --output 'jsonpath={..namespace}')
+    local color='%F{68}'
+    echo -n "\ufd31 ${context} | ${namespace}"
+  fi
+}
+
+zsh_randicon(){ 
+  randicons=(
+    "\uf1a8" # Pied Piper
+    "\uf2cd" # Bathtub
+    "\ue286" # Biohazard
+    "\ue28d" # Bread
+    "\ue28c" # Brain
+    "\ue29f" # Chicken
+    "\ue260" # king
+    "\ue273" # donut
+    "\ue24b" # intestines
+    "\ue231" # poison
+    "\ue238" # radioactive
+    "\uf614" # hundo
+    "\uf64e" # clippy
+    "\uf6e4" # duck
+    "\uf79f" # ghost
+    "\ue36a" # meteor
+    "\ue36e" # alien
+    "\ue000" # japanese arch
+    "\ue006" # palm tree
+    "\uf483" #squirrel
+    "\uf427" # rocket
+    "\uf490" # fire
+    "\uf499" # beaker
+    "\uf7b3" # controller
+    "\ufa2a" # traffic light
+    "\ufa28" # tooth
+    "\ufb67" # test tube
+    "\ue219" # taco
+    "\ue251" # hotdog
+    "\ufb8a" # skull
+    "\ufb08" # saxophone
+    "\uf901" # pill
+    "\uf872" # creeper
+    "\uf855" # martini
+    "\ufcd3" # lava lamp
+    "\ue24d" # burger
+    "\uf7a4" # glass flute
+    "\uf7a5" # mug
+    "\uf699" # cow
+  )
+  random=$(($[$$$(date +%s) % ${#randicons[@]}] + 1))
+  echo -n "${randicons[$random]}"
+}
+
+zsh_terraform() {
+  # break if there is no .terraform directory
+  if [[ -d .terraform ]]; then
+    local tf_workspace=$(/usr/local/bin/terraform workspace show)
+    local tf_short_workspace=${tf_workspace:0:1:u}
+    local tf_region=$(readlink backend.tf | awk -F. '{print $3}')
+
+    if [[ $tf_short_workspace == "P" ]]
+    then
+      local color='%F{red}'
+    else
+      local color='%F{white}'
+    fi 
+
+    case $tf_region in
+      us-west-2)
+        local tf_short_region="UW2"
+        ;;
+      us-west-2)
+        local tf_short_region="UE2"
+        local color='%F{red}'
+        ;;
+      *)
+        local tf_short_region=$tf_region
+        local color='%F{yellow}'
+        ;;
+    esac
+
+    echo -n "%{$color%}\ufbdf $tf_short_workspace:$tf_short_region%{%f%}"
+  fi
+}
