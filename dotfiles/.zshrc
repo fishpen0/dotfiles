@@ -62,7 +62,7 @@ export ZSH="/Users/lstuart/.antigen/bundles/robbyrussell/oh-my-zsh/"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -110,6 +110,15 @@ pastefinish() {
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
+
+##################
+# PowerLevel 10k #
+##################
+
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #######################
 # Powerlevel9k Config #
