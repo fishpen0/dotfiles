@@ -15,7 +15,6 @@ compinit
 
 # Use brew coreutils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Use brew curl
 export PATH="/usr/local/opt/curl/bin:$PATH"
