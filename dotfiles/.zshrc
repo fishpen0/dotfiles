@@ -79,53 +79,6 @@ if zplug check zsh-users/zsh-history-substring-search; then
     bindkey '^[[B' history-substring-search-down
 fi
 
-#############
-# oh-my-zsh #
-#############
-
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/lstuart/.antigen/bundles/robbyrussell/oh-my-zsh/"
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-
-# Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/.zsh_customizations
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 ##################
 # PowerLevel 10k #
 ##################
