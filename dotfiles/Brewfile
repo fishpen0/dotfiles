@@ -29,7 +29,6 @@ brew 'mas'
 brew 'node'
 brew 'openldap'
 brew 'postgresql'
-brew 'powerlevel10k'
 brew 'pv' # Copy progress tool
 brew 'python'
 # brew 'reattach-to-user-namespace' # TMUX patch for fixing copy/paste on macos
@@ -71,4 +70,5 @@ cask 'vlc'
 cask "font-inconsolata-nerd-font"
 
 # App Store Apps
-mas 'Xcode', id: 497799835
+# mas "Apple Developer", id: 640199958
+# mas 'Xcode', id: 497799835
