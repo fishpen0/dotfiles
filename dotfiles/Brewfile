@@ -1,6 +1,7 @@
 # Taps
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
 
 # Brews
@@ -65,6 +66,9 @@ cask 'spotify'
 cask 'steermouse' # Better than usb overdrive
 cask 'visual-studio-code'
 cask 'vlc'
+
+# Fonts
+cask "font-inconsolata-nerd-font"
 
 # App Store Apps
 mas 'Xcode', id: 497799835

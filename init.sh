@@ -80,10 +80,6 @@ then
 fi
 chsh -s /usr/local/bin/zsh;
 
-# Install powerline fonts
-echo "Installing powerline fonts"
-unzip fonts/Inconsolata.zip -d /Library/Fonts
-
 echo "Downloading latest iterm integration files for bash"
 curl -sL https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
 
