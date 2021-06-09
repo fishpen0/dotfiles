@@ -82,6 +82,12 @@ function get-instance-ips() {
     fi
 }
 
+function ecr-login() {
+    $(aws ecr get-login --no-include-email --registry-ids 514563129364)
+    $(aws ecr get-login --no-include-email --registry-ids 683583236714)
+    $(aws ecr get-login --no-include-email --registry-ids 124945441934)
+}
+
 
 function rds-vacuum-logs() {
     local env=$1
@@ -101,9 +107,8 @@ function rds-vacuum-logs() {
 # Git Repos #
 #############
 GIT_DIR_PERSONAL="~/dev/personal"
-GIT_DIR_WORK="~/dev/ps"
+GIT_DIR_WORK="~/dev/circle"
 alias dotfiles="code $GIT_DIR_PERSONAL/dotfiles"
-alias inf="code $GIT_DIR_WORK/infrastructure"
 
 ##############
 # Kubernetes #
