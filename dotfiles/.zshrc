@@ -27,6 +27,9 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 # Use brew unzip
 export PATH="/usr/local/opt/unzip/bin:$PATH"
 
+# load custom aliases
+source $HOME/.aliases.zsh
+
 #######################
 # Environment Changes #
 #######################
