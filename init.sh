@@ -8,7 +8,7 @@ echo "Running Setup Tasks"
 
 # Copy dotfiles to home
 echo "Copying Configuration files"
-cp -av dotfiles/. ~/
+# cp -av dotfiles/. ~/
 
 # Enable xcode clt
 if [ $(xcode-select -p) ] ; then
@@ -34,9 +34,6 @@ fi
 # Disable Tracking
 brew analytics off
 
-# Setup cask for applications
-brew tap caskroom/cask
-
 # Setup mas for app store support
 brew install mas
 
@@ -52,13 +49,7 @@ brew cleanup
 ##################
 
 # Update pip
-pip install --upgrade pip setuptools
-
-# Color ls
-gem install colorls --user-install
-
-# Lolcat
-gem install lolcat --user-install
+pip3 install --upgrade pip setuptools
 
 #########
 # Iterm #
@@ -76,17 +67,11 @@ npm install -g iterm2-tab-set
 ##########
 
 # Execute Mac OS configuration tasks
-source ~/.macos
+# source ~/.macos
 
 ###############
 # Shell Stuff #
 ###############
-
-# Fix Bash to default to bash 4
-if ! grep -Fxq "/usr/local/bin/bash" /etc/shells
-then
-    echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-fi
 
 # Make ZSH default shell
 if ! grep -Fxq "/usr/local/bin/zsh" /etc/shells
@@ -99,10 +84,6 @@ chsh -s /usr/local/bin/zsh;
 echo "Installing powerline fonts"
 unzip fonts/Inconsolata.zip -d /Library/Fonts
 
-# Install oh-my-zsh
-echo "Installing oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 echo "Downloading latest iterm integration files for bash"
 curl -sL https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
 
@@ -113,20 +94,20 @@ curl -sL https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration
 # crontab #
 ###########
 
-echo "Installing crontab"
-crontab ~/.cron
+# echo "Installing crontab"
+# crontab ~/.cron
 
-################
-# Applications #
-################
+# ################
+# # Applications #
+# ################
 
-# visual-studio-code
+# # visual-studio-code
 
-## Install extensions
-echo "Installing vscode extensions"
-while IFS='' read -r extension || [[ -n "$extension" ]]; do
-    code --install-extension $extension
-done < "vscode/extensions"
+# ## Install extensions
+# echo "Installing vscode extensions"
+# while IFS='' read -r extension || [[ -n "$extension" ]]; do
+#     code --install-extension $extension
+# done < "vscode/extensions"
 
 # Steermouse
 
