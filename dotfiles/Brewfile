@@ -58,7 +58,7 @@ cask 'docker'
 cask 'gimp'
 cask 'google-chrome'
 cask 'google-cloud-sdk'
-bask 'gpg-suite'
+cask 'gpg-suite'
 cask 'iterm2'
 cask 'muzzle' # auto-enable do not disturb on screenshares
 cask 'slack'
