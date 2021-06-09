@@ -83,14 +83,15 @@ fi
 # PowerLevel 10k #
 ##################
 
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #######################
 # Powerlevel9k Config #
 #######################
+
+# Font Mode
+POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Basic Config
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
@@ -125,18 +126,9 @@ POWERLEVEL9K_CUSTOM_TERRAFORM="zsh_terraform"
 POWERLEVEL9K_CUSTOM_TERRAFORM_BACKGROUND=057
 POWERLEVEL9K_CUSTOM_TERRAFORM_FOREGROUND=015
 
-# Time Segment
-POWERLEVEL9K_TIME_ICON=''
-
 # Virtualenv Segment
 POWERLEVEL9K_VIRTUALENV_BACKGROUND=green
 POWERLEVEL9K_PYTHON_ICON="\uf81f"
-
-# VCS Segment
-POWERLEVEL9K_VCS_GIT_ICON=''
-POWERLEVEL9K_VCS_GIT_GITHUB_ICON=''
-POWERLEVEL9K_VCS_GIT_GITLAB_ICON=''
-POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=''
 
 # Segments Config
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_randicon dir custom_aws custom_kubernetes custom_terraform virtualenv rbenv vcs)
