@@ -4,10 +4,6 @@
 # Path Changes #
 ################
 
-# Setup Go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
 # Use zsh-completions
 chmod -R go-w '/usr/local/share/zsh'
 autoload -Uz compinit
