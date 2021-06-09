@@ -44,6 +44,13 @@ export AWS_DEFAULT_PROFILE="default"
 # load iterm integration
 source ~/.iterm2_shell_integration.zsh
 
+#########################
+# zplug package manager #
+#########################
+
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
 #############
 # oh-my-zsh #
 #############
