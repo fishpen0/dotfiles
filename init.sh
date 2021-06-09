@@ -8,7 +8,7 @@ echo "Running Setup Tasks"
 
 # Copy dotfiles to home
 echo "Copying Configuration files"
-# cp -av dotfiles/. ~/
+cp -av dotfiles/. ~/
 
 # Enable xcode clt
 if [ $(xcode-select -p) ] ; then
@@ -67,7 +67,7 @@ npm install -g iterm2-tab-set
 ##########
 
 # Execute Mac OS configuration tasks
-# source ~/.macos
+source ~/.macos
 
 ###############
 # Shell Stuff #
@@ -92,21 +92,3 @@ curl -sL https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration
 
 # echo "Installing crontab"
 # crontab ~/.cron
-
-# ################
-# # Applications #
-# ################
-
-# # visual-studio-code
-
-# ## Install extensions
-# echo "Installing vscode extensions"
-# while IFS='' read -r extension || [[ -n "$extension" ]]; do
-#     code --install-extension $extension
-# done < "vscode/extensions"
-
-# Steermouse
-
-## Ensure System settings is killed, then copy settings over
-osascript -e 'tell application "System Preferences" to quit'
-cp steermouse/Device.smsetting ~/Library/Application\ Support/SteerMouse\ \&\ CursorSense/
