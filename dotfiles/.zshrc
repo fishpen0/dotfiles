@@ -1,4 +1,5 @@
 #@IgnoreInspection BashAddShebang
+zmodload zsh/zprof
 
 ################
 # Path Changes #
@@ -30,10 +31,14 @@ export PATH="/usr/local/opt/unzip/bin:$PATH"
 # load custom aliases
 source $HOME/.aliases.zsh
 
+# load 1password completions
+eval "$(op completion zsh)"; compdef _op op
+
 #######################
 # Environment Changes #
 #######################
 export AWS_DEFAULT_PROFILE="default"
+export GPG_TTY=$(tty) # lets gpg run
 
 ###############
 # iTerm setup #
@@ -165,3 +170,6 @@ setopt HIST_SAVE_NO_DUPS
 # duration (in seconds) to the history file. The format of this prefixed data is:
 # ‘: <beginning time>:<elapsed seconds>;<command>’.
 setopt EXTENDED_HISTORY
+
+# Uncomment to run startup diagnostics
+# zprof

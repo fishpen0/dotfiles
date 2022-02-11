@@ -27,18 +27,33 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 #################
 
 function awsacct() {
-    awsacct_tools=(aws terraform)
-    profiles=$(grep '^[[]profile' <~/.aws/config | awk '{print $2}' | sed 's/]$//')
-
+    declare -A accounts=( [circle-dev]=124945441934 [circle-ops]=514563129364 [circle-pay]=908968368384 [circle-platform]=683583236714 )
     if [ $# -eq 0 ]
     then
-        echo $profiles
+        aws configure list-profiles
     else
+        eval $(op signin circlefin)
+        export AWS_PROFILE=$1
         export AWS_DEFAULT_PROFILE=$1
-        for i in ${awsacct_tools[@]}; do
-            alias $i="aws-vault exec --assume-role-ttl=60m $AWS_DEFAULT_PROFILE -- $i"
-        done
+        echo -e `op get totp onelogin` | aws-auth-onelogin -u  `op get item onelogin --fields username` --onelogin-password `op get item onelogin --fields password` -p $1 --aws-role-name CFN-Circle-SSO-Ops --aws-account-id ${accounts[$1]}
     fi
+}
+
+function eksctx() {
+  export KUBERNETES_DISPLAY=1
+  if [ $# -eq 0 ]
+  then
+      kubectx
+  else
+      aws eks --region us-east-1 update-kubeconfig --name $1 --alias $1
+  fi
+}
+
+function awslogin() {
+  echo -e `op get totp onelogin` | aws-auth-onelogin -u  `op get item onelogin --fields username` --onelogin-password `op get item onelogin --fields password` -p circle-dev --aws-role-name CFN-Circle-SSO-Ops --aws-account-id 124945441934
+  echo -e `op get totp onelogin` | aws-auth-onelogin -u  `op get item onelogin --fields username` --onelogin-password `op get item onelogin --fields password` -p circle-ops --aws-role-name CFN-Circle-SSO-Ops --aws-account-id 514563129364
+  echo -e `op get totp onelogin` | aws-auth-onelogin -u  `op get item onelogin --fields username` --onelogin-password `op get item onelogin --fields password` -p circle-pay --aws-role-name CFN-Circle-SSO-DevOps --aws-account-id 908968368384
+  echo -e `op get totp onelogin` | aws-auth-onelogin -u  `op get item onelogin --fields username` --onelogin-password `op get item onelogin --fields password` -p circle-platform --aws-role-name CFN-Circle-SSO-DevOps --aws-account-id 683583236714
 }
 
 function awscssh() {
@@ -48,6 +63,10 @@ function awscssh() {
     else
         tmux-cssh `get-instance-ips $1 $2` 
     fi
+}
+
+function awscommand() {
+
 }
 
 function bucketsize() {
@@ -82,10 +101,25 @@ function get-instance-ips() {
     fi
 }
 
+function get-instance-ids() {
+    if [[ $AWS_DEFAULT_PROFILE == "default" ]]
+    then 
+        echo "please set your aws profile with awsacct"
+    else
+        env=$1
+        roles=$2
+        aws-vault exec --assume-role-ttl=60m $AWS_DEFAULT_PROFILE -- aws ec2 describe-instances --filters "Name=tag:roles,Values=$roles" "Name=tag:env,Values=$env" --query "Reservations[*].Instances[*].PrivateIpAddress" --output=text
+    fi
+}
+
 function ecr-login() {
-    $(aws ecr get-login --no-include-email --registry-ids 514563129364)
-    $(aws ecr get-login --no-include-email --registry-ids 683583236714)
-    $(aws ecr get-login --no-include-email --registry-ids 124945441934)
+    # $(aws ecr get-login --no-include-email --registry-ids 514563129364)
+    # $(aws ecr get-login --no-include-email --registry-ids 683583236714)
+    # $(aws ecr get-login --no-include-email --registry-ids 124945441934)
+
+    aws ecr get-login-password --region=us-east-1 | docker login --username AWS --password-stdin 514563129364.dkr.ecr.us-east-1.amazonaws.com
+    aws ecr get-login-password --region=us-east-1 | docker login --username AWS --password-stdin 683583236714.dkr.ecr.us-east-1.amazonaws.com
+    aws ecr get-login-password --region=us-east-1 | docker login --username AWS --password-stdin 124945441934.dkr.ecr.us-east-1.amazonaws.com
 }
 
 
@@ -157,6 +191,14 @@ function spoof(){
 
 function unspoof(){
     echo "TODO: MAKE THIS WORK"
+}
+
+#############
+# 1password #
+#############
+
+1pass () {
+    eval $(op signin circlefin)
 }
 
 #############
@@ -261,7 +303,7 @@ zsh_terraform() {
   # break if there is no .terraform directory
   if [[ -d .terraform ]]; then
     local tf_workspace=$(/usr/local/bin/terraform workspace show)
-    local tf_short_workspace=${tf_workspace:0:1:u}
+    # local tf_short_workspace=${tf_workspace:0:1:u}
     local tf_region=$(readlink backend.tf | awk -F. '{print $3}')
 
     if [[ $tf_short_workspace == "P" ]]
@@ -285,6 +327,7 @@ zsh_terraform() {
         ;;
     esac
 
-    echo -n "%{$color%}\ufbdf $tf_short_workspace:$tf_short_region%{%f%}"
+    # echo -n "%{$color%}\ufbdf $tf_short_workspace:$tf_short_region%{%f%}"
+    echo -n "%{$color%}\ufbdf $tf_workspace%{%f%}"
   fi
 }

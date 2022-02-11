@@ -12,6 +12,8 @@
     branches = --no-pager branch -a
     l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     s = status -s
+[init]
+        templatedir = ~/.git-templates
 
 # Safety mechanism for commit identities
 # Add a .gitconfig file to below directories with alternate [user] information
