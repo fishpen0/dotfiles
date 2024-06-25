@@ -18,7 +18,7 @@
 # Safety mechanism for commit identities
 # Add a .gitconfig file to below directories with alternate [user] information
 [includeIf "gitdir:~/dev/circle/"]
-    path = ~/dev/circle/.gitconfig
+    path = ~/dev/cityblock/.gitconfig
 [includeIf "gitdir:~/dev/personal/"]
     path = ~/dev/personal/.gitconfig
 [includeIf "gitdir:~/dev/public/"]

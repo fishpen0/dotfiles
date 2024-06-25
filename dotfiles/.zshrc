@@ -6,9 +6,14 @@ zmodload zsh/zprof
 ################
 
 # Use zsh-completions
-chmod -R go-w '/usr/local/share/zsh'
-autoload -Uz compinit
-compinit
+
+if type brew &>/dev/null; then
+    chmod -R go-w '/opt/homebrew/share'
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+fi
 
 # Use brew coreutils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -19,7 +24,10 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 # Use brew findutils
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 
-# Use bre grep
+# use brew Krew
+export PATH="${PATH}:${HOME}/.krew/bin"
+
+# Use brew grep
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 
 # Use brew sqlite
@@ -47,18 +55,28 @@ export GPG_TTY=$(tty) # lets gpg run
 # load iterm integration
 source ~/.iterm2_shell_integration.zsh
 
+#######
+# NVM #
+#######
+mkdir -p ~/.nvm 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"  # This loads nvm
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 #########################
 # zplug package manager #
 #########################
 
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=$(brew --prefix zplug)
 source $ZPLUG_HOME/init.zsh
 
 # zsh-users plugins
 zplug "zsh-users/zsh-apple-touchbar"
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-history-substring-search", defer:3
+zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search", defer:3
 
 # oh-my-zsh plugins
 zplug "plugins/colored-man-pages", from:oh-my-zsh
@@ -137,7 +155,7 @@ POWERLEVEL9K_PYTHON_ICON="\uf81f"
 
 # Segments Config
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_randicon dir custom_aws custom_kubernetes custom_terraform virtualenv rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status gcloud root_indicator background_jobs history time)
 
 ##################
 # Aliases Config #
