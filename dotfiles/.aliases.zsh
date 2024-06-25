@@ -170,10 +170,10 @@ function kubeacct {
 function kubens {
     if [ -z "$1" ]
     then
-        /usr/local/bin/kubens
+        $(brew --prefix kubectx)/bin/kubens
     else
         namespace=$1
-        /usr/local/bin/kubens $namespace
+        $(brew --prefix kubectx)/bin/kubens $namespace
         export TILLER_NAMESPACE=$namespace
     fi
 }
@@ -328,6 +328,6 @@ zsh_terraform() {
     esac
 
     # echo -n "%{$color%}\ufbdf $tf_short_workspace:$tf_short_region%{%f%}"
-    echo -n "%{$color%}\ufbdf $tf_workspace%{%f%}"
+    echo -n "%{$color%}\ue69a $tf_workspace%{%f%}"
   fi
 }
