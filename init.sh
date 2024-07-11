@@ -1,7 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -Eeuo pipefail
-
-# Copy the dotfiles
 
 # Drop into the package setup for my distro/device
 unameOut="$(uname -sr)"
