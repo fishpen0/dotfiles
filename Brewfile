@@ -3,10 +3,14 @@ tap "fluxcd/tap"
 tap "homebrew/bundle"
 
 # Brews
+brew "coreutils" # gnu utils
 brew "cilium-cli" # CLI to install, manage & troubleshoot Kubernetes clusters running Cilium
-brew 'dive'    #docker image layer explorer
+brew "curl"    # gnu curl
+brew 'dive'    # docker image layer explorer
+brew 'findutils' # gnu find
 brew "git"     # Keep git more updated than macos does
 brew "gnupg"   # PGP
+brew 'grep'    # gnu grep
 brew "jq"      # JSON parser for shell
 brew "k9s"     # Interactive shell for kubernetes
 brew "kubernetes-cli" # Read better nerd
