@@ -4,7 +4,8 @@ tap "homebrew/bundle"
 
 # Brews
 brew "cilium-cli" # CLI to install, manage & troubleshoot Kubernetes clusters running Cilium
-brew "git"        # Keep git more updated than macos does
+brew 'dive'    #docker image layer explorer
+brew "git"     # Keep git more updated than macos does
 brew "gnupg"   # PGP
 brew "jq"      # JSON parser for shell
 brew "k9s"     # Interactive shell for kubernetes
@@ -17,8 +18,10 @@ brew "pipx"     # Python package manager with virtualenv baked in
 brew "pre-commit" # Hooks for git
 brew "sops"     # Secret encryption
 brew "starship" # The minimal, blazing-fast, and infinitely customizable prompt for any shell!
+brew "trash"    # send files to trash
 brew "yq" # YAML parser for bash
 brew "zsh" #keep ZSH more up to date than macos does
+brew 'zsh-completions'
 
 # Casks
 cask "1password"     # Password manager
@@ -36,6 +39,7 @@ cask "vlc"     # Video Player
 cask "wifiman" # Ubiquiti VPN
 
 # Font Casks
+cask "font-inconsolata-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 
 # Macos Packages
