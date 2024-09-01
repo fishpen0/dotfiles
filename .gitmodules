@@ -1,3 +1,0 @@
-[submodule "dotfiles/.zsh_customizations/themes/powerlevel9k"]
-	path = dotfiles/.zsh_customizations/themes/powerlevel9k
-	url = https://github.com/bhilburn/powerlevel9k.git
