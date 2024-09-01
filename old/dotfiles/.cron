@@ -1,7 +1,0 @@
-# use `crontab ~/.cron` to dump this file into the crontab for the system
-
-# Clean up docker wasted disk space
-00 12 * * * /usr/local/bin/docker system prune --volumes -f
-
-# Get latest brew data every hour. Only run if brew is installed.
-00 * * * * if [ -x "$(command -v /usr/local/bin/brew)" ]; then /usr/local/bin/brew update; fi
