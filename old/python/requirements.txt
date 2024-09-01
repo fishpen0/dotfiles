@@ -1,3 +1,0 @@
-awscli
-pyrseas
-virtualenv
