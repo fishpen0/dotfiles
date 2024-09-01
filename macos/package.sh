@@ -17,4 +17,12 @@ else
 fi
 
 # Install Packages
-brew bundle
+brew analytics off # Disable Tracking
+brew install mas --quiet # App Store
+brew install whalebrew --quiet # Containerized packages
+brew bundle --global
+brew upgrade
+brew cleanup
+
+# Execute Mac OS configuration tasks
+source ~/.macos
