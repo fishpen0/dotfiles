@@ -5,36 +5,32 @@ zmodload zsh/zprof
 # Path Changes #
 ################
 
-# Use zsh-completions
-
 if type brew &>/dev/null; then
+# Use zsh-completions
     chmod -R go-w '/opt/homebrew/share'
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
     autoload -Uz compinit
     compinit
+
+    # Use brew coreutils
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+    # Use brew curl
+    export PATH="/usr/local/opt/curl/bin:$PATH"
+
+    # Use brew findutils
+    export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+
+    # use brew Krew
+    export PATH="${PATH}:${HOME}/.krew/bin"
+
+    # Use brew grep
+    export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+
+    # Use brew antidote
+    source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 fi
-
-# Use brew coreutils
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-
-# Use brew curl
-export PATH="/usr/local/opt/curl/bin:$PATH"
-
-# Use brew findutils
-export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-
-# use brew Krew
-export PATH="${PATH}:${HOME}/.krew/bin"
-
-# Use brew grep
-export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-
-# Use brew sqlite
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-
-# Use brew unzip
-export PATH="/usr/local/opt/unzip/bin:$PATH"
 
 # load custom aliases
 source $HOME/.aliases.zsh
@@ -42,29 +38,7 @@ source $HOME/.aliases.zsh
 # load 1password completions
 eval "$(op completion zsh)"; compdef _op op
 
-#######################
-# Environment Changes #
-#######################
-export AWS_DEFAULT_PROFILE="default"
-export GPG_TTY=$(tty) # lets gpg run
-
-###############
-# iTerm setup #
-###############
-
-# load iterm integration
-source ~/.iterm2_shell_integration.zsh
-
-#######
-# NVM #
-#######
-mkdir -p ~/.nvm 
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"  # This loads nvm
-[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-#########################
+##############
 # zplug package manager #
 #########################
 
