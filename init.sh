@@ -10,8 +10,8 @@ case "${unameOut}" in
 esac
 
 # Run device-specific setup
-if test -f ${device}/package.sh ; then
-    source ${device}/package.sh
+if test -f platform/${device}/package.sh ; then
+    source platform/${device}/package.sh
 fi
 
 # Sync dotfiles into $HOME
