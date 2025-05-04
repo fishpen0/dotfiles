@@ -106,3 +106,10 @@ SAVEHIST=10000
 
 # Where to store history
 HISTFILE=~/.zsh_history
+
+###############################
+# Performance Troubleshooting #
+###############################
+# Show profiling results
+# Uncomment the following line to enable profiling
+# zprof
