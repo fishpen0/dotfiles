@@ -22,6 +22,7 @@ if type brew &>/dev/null; then
 
     # Use brew grep
     export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
+
 fi
 
 ########################
