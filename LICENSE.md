@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024 Logan Stuart
+Copyright (c) 2025 Logan Stuart
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
