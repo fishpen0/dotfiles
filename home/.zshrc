@@ -73,8 +73,15 @@ znap eval _compinit 'compinit'
 # Theme Settings #
 ##################
 
-# Enable Powerlevel10k if configuration exists
+# Enable Powerlevel10k if configuration exists and is readable
 [[ -r "${HOME}/.p10k.zsh" ]] && source "${HOME}/.p10k.zsh"
+
+##################
+# Alias Settings #
+##################
+
+# these fancy headers are getting silly for these one-liners
+[[ -r ~/.aliases.zsh ]] && source ~/.aliases.zsh
 
 ####################
 # History Settings #
