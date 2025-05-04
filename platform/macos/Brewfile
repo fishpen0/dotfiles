@@ -7,9 +7,12 @@ brew "age"        # Age is sops encryption backend
 brew "cilium-cli" # CLI to install, manage & troubleshoot Kubernetes clusters running Cilium
 brew "coreutils"  # gnu utils
 brew "curl"       # gnu curl
+brew "diskonaut"  # Disk usage analyzer
 brew 'dive'       # docker image layer explorer
 brew 'findutils'  # gnu find
+brew "gh"         # GitHub CLI
 brew "git"        # Keep git more updated than macos does
+brew "git-lfs"    # Git Large File Storage
 brew "gnupg"      # PGP
 brew 'grep'       # gnu grep
 brew "helm"       # Package manager for kubernetes
@@ -17,6 +20,7 @@ brew "jq"         # JSON parser for shell
 brew "k9s"        # Interactive shell for kubernetes
 brew "kubernetes-cli" # Read better nerd
 brew "kubectx"    # Context switcher for kubernetes
+brew "less"       # gnu less
 brew "mas"        # Connects brew to the app store
 brew "neofetch"   # System details
 brew "nmap"       # Network scanner
@@ -28,6 +32,7 @@ brew "smartmontools" # Monitor your hard drive
 brew "sops"       # Secret encryption
 brew "trash", link: true # send files to trash
 brew "tree"       # Tree view for directories
+brew "watch"      # Run a command at intervals
 brew "yq"  # YAML parser for bash
 brew "zsh" # Keep ZSH more up to date than macos does
 brew 'zsh-completions' # ZSH completions
