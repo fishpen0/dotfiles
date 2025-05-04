@@ -69,6 +69,13 @@ znap source zsh-users/zsh-syntax-highlighting # Syntax highlighting
 autoload -Uz compinit
 znap eval _compinit 'compinit'
 
+##################
+# Theme Settings #
+##################
+
+# Enable Powerlevel10k if configuration exists
+[[ -r "${HOME}/.p10k.zsh" ]] && source "${HOME}/.p10k.zsh"
+
 ####################
 # History Settings #
 ####################
