@@ -20,9 +20,14 @@ fi
 brew analytics off # Disable Tracking
 brew install mas --quiet # App Store
 brew install whalebrew --quiet # Containerized packages
-brew bundle --global
+brew bundle --file="$(dirname "$0")/Brewfile"
 brew upgrade
 brew cleanup
 
 # Execute macos-specific configuration tasks
 source "$(dirname "$0")/.macos"
+
+# Make all terminals use the brew version of zsh
+# TODO: make this work on one loop
+sudo sh -c 'echo /opt/homebrew/bin/zsh >> /etc/shells'
+chsh -s /opt/homebrew/bin/zsh

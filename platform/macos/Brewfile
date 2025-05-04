@@ -1,0 +1,77 @@
+# What's on Tap
+tap "fluxcd/tap"     # FluxCD
+tap "siderolabs/tap" # Talos
+
+# Brews
+brew "age"        # Age is sops encryption backend
+brew "cilium-cli" # CLI to install, manage & troubleshoot Kubernetes clusters running Cilium
+brew "coreutils"  # gnu utils
+brew "curl"       # gnu curl
+brew 'dive'       # docker image layer explorer
+brew 'findutils'  # gnu find
+brew "git"        # Keep git more updated than macos does
+brew "gnupg"      # PGP
+brew 'grep'       # gnu grep
+brew "helm"       # Package manager for kubernetes
+brew "jq"         # JSON parser for shell
+brew "k9s"        # Interactive shell for kubernetes
+brew "kubernetes-cli" # Read better nerd
+brew "kubectx"    # Context switcher for kubernetes
+brew "mas"        # Connects brew to the app store
+brew "neofetch"   # System details
+brew "nmap"       # Network scanner
+brew "opentofu"   # Infrastructure as code
+brew "pipx"       # Python package manager with virtualenv baked in
+brew "pre-commit" # Hooks for git
+brew "rust"       # Keep rust more updated than macos does
+brew "smartmontools" # Monitor your hard drive
+brew "sops"       # Secret encryption
+brew "trash", link: true # send files to trash
+brew "tree"       # Tree view for directories
+brew "yq"  # YAML parser for bash
+brew "zsh" # Keep ZSH more up to date than macos does
+brew 'zsh-completions' # ZSH completions
+
+# Non-Default Brews
+brew "fluxcd/tap/flux" # CLI for FluxCD
+brew "siderolabs/tap/talosctl" # CLI for Talos
+
+# Casks
+cask "1password"     # Password manager
+cask "1password-cli" # CLI for 1pass
+cask "alfred"        # Better Spotlight + Automations
+cask "chatgpt"       # AI Chatbot because thinking is no longer VC approved
+cask "discord"       # Chat App (When forums died the internet went with it)
+cask "displaylink"   # For multiple monitors
+cask "firefox"       # Browser
+cask "ghostty"       # Faster terminal
+cask "google-chrome" # Worse Browser
+cask "orbstack"      # Better than docker or minikube or rancher-desktop as of 2025
+cask "slack"         # Chat App (pretend professional)
+cask "steam"         # Video Games
+cask "tailscale"     # Homelab VPN mesh
+cask "visual-studio-code" # Sometimes IDEs are nice
+cask "vlc"     # Video Player
+
+# Font Casks
+cask "font-inconsolata-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+
+# Macos Packages
+mas "1Password for Safari", id: 1569813296
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Unsqueeze", id: 6475134617 # Lazy video enhancer
+
+# VSCode Extensions
+vscode "docker.docker"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
+vscode "ms-vscode-remote.remote-containers"
+vscode "openai.chatgpt"
+vscode "redhat.vscode-yaml"
