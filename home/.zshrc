@@ -25,6 +25,27 @@ if type brew &>/dev/null; then
 
 fi
 
+# pipx installs
+export PATH="$PATH:$HOME/.local/bin"
+
+# rust installs
+export PATH="$PATH:$HOME/.cargo/bin"
+
+# conda installs - dont touch, conda wll overwrite this
+# >>> conda initialize >>>
+__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
 ########################
 # znap package manager #
 ########################
