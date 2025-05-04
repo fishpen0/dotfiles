@@ -1,3 +1,4 @@
 Alfred config
 test steermouse
 clone personal git repos
+alacritty / 
