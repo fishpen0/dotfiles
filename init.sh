@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-# Drop into the package setup for my distro/device
+# Determine device-specific script
 unameOut="$(uname -sr)"
 case "${unameOut}" in
     *valve*)     device=steamdeck;;
@@ -9,6 +9,12 @@ case "${unameOut}" in
     *)          device="UNKNOWN:${unameOut}"
 esac
 
+# Run device-specific setup
 if test -f ${device}/package.sh ; then
     source ${device}/package.sh
 fi
+
+# Sync dotfiles into $HOME
+echo "Syncing dotfiles to $HOME..."
+rsync -avh home/ "$HOME"
+echo "Dotfiles synced."

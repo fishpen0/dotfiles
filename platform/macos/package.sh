@@ -24,5 +24,5 @@ brew bundle --global
 brew upgrade
 brew cleanup
 
-# Execute Mac OS configuration tasks
-source ~/.macos
+# Execute macos-specific configuration tasks
+source "$(dirname "$0")/.macos"
